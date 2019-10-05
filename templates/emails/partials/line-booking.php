@@ -14,6 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+$reservation = abrs_reservation();
+
+
 /* @var \AweBooking\Model\Booking $booking */
 ?>
 
@@ -120,7 +123,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<tr>
 			<th><?php esc_html_e( 'Total', 'awebooking' ); ?></th>
-			<td class="total-column"><?php abrs_price( $booking->get_total(), $booking->get( 'currency' ) ); ?></td>
+			<td class="total-column"><?php abrs_price( $reservation->get_total() ); ?></td>
 		</tr>
 
 		<tr>
